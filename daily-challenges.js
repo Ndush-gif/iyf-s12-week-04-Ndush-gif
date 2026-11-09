@@ -20,9 +20,20 @@ for (let i = 1; i <= 100; i++) {
 
 // Day 2: Reverse a String 🟢
 // Write a function that reverses a string.
-
 // Input: "hello" → Output: "olleh"
 // Try multiple approaches (loop, built-in methods)
+// Using built-in methods
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+// Using a loop
+function reverseStringLoop(str) {
+    let reversed = "";  
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+}
 // Day 3: Find Largest Number 🟢
 // Write a function that finds the largest number in an array.
 
