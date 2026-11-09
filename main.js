@@ -124,14 +124,17 @@ console.log(`I will turn 100 in the year ${yearTurning100}.`);
 function greet(name) {
     return `Hello, ${name}!`;
 }
+console.log(greet("Catherine")); // output: Hello, Catherine!
 
 // Function expression
 const add = function(a, b) {
     return a + b;
 };
+console.log(add(5, 3)); // output: 8
 
 // Arrow function
 const multiply = (a, b) => a * b;
+console.log(multiply(4, 6)); // output: 24                  
 
 // Arrow function with body
 const divide = (a, b) => {
@@ -140,6 +143,7 @@ const divide = (a, b) => {
     }
     return a / b;
 };
+console.log(divide(10, 2)); // output: 5
 
 // Exercise 2: Build These Functions
 
@@ -147,14 +151,17 @@ const divide = (a, b) => {
 function calculateArea(width, height) {
     return width * height;
 }   
+
 // celsiusToFahrenheit(celsius) - converts temperature
 function celsiusToFahrenheit(celsius) {
     return (celsius * 9/5) + 32;
 }
+
 // isEven(number) - returns true if even, false if odd
 function isEven(number) {
     return number % 2 === 0;
 }
+
 // getInitials(fullName) - returns initials (e.g., "Catherine Nduku" → "CN")
 function getInitials(fullName) {
     const names = fullName.split(" ");
@@ -250,57 +257,37 @@ for (const color of colors) {
     console.log(color);
 }
 
+
 // Build these programs:
 
 // Print numbers 1-100
-
+const numbers = [];
+for (let i = 1; i <= 100; i++) {
+    numbers.push(i);
+}
+console.log(numbers);
 // Print only even numbers 1-50
-// FizzBuzz (print "Fizz" for multiples of 3, "Buzz" for 5, "FizzBuzz" for both)
-// Print a triangle of stars
-
-// Mini-Project: Calculator 🔴
-// Time: 60 minutes
-
-// Build an interactive calculator in the console.
-
-// Requirements:
-
-// Functions for add, subtract, multiply, divide
-// A main calculate(num1, operator, num2) function
-// Handle division by zero
-// Support these operators: +, -, *, /, % (modulus), ** (power)
-
-// Starter Code:
- 
-function add(a, b) {
-    return a + b;
-}
-
-function subtract(a, b) {
-    // Your code
-}
-
-function multiply(a, b) {
-    // Your code
-}
-
-function divide(a, b) {
-    // Your code (handle zero!)
-}
-
-function calculate(num1, operator, num2) {
-    switch (operator) {
-        case "+":
-            return add(num1, num2);
-        // Add remaining cases
-        default:
-            return "Invalid operator";
+const evenNumbers = [];
+for (let i = 1; i <= 50; i++) {
+    if (i % 2 === 0) {
+        evenNumbers.push(i);
     }
 }
+console.log(evenNumbers);
+// FizzBuzz (print "Fizz" for multiples of 3, "Buzz" for 5, "FizzBuzz" for both)
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+        console.log("Fizz");
+    } else if (i % 5 === 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
+}
+// Print a triangle of stars
+for (let i = 1; i <= 5; i++) {
+    console.log("*".repeat(i));
+}
 
-// Test
-console.log(calculate(10, "+", 5));  // 15
-console.log(calculate(10, "-", 5));  // 5
-console.log(calculate(10, "*", 5));  // 50
-console.log(calculate(10, "/", 5));  // 2
-console.log(calculate(10, "/", 0));  // Error message]
