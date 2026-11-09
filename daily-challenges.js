@@ -82,3 +82,12 @@ console.log(removeDuplicatesFilter([1, 2, 2, 3, 4, 4, 5])); // [1, 2, 3, 4, 5]
 // "racecar" → true
 // "hello" → false
 // Ignore case and spaces: "A man a plan a canal Panama" → true
+
+function isPalindrome(str) {
+    const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const reversed = cleaned.split("").reverse().join("");
+    return cleaned === reversed;
+}
+console.log(isPalindrome("racecar")); // true
+console.log(isPalindrome("hello")); // false
+console.log(isPalindrome("A man a plan a canal Panama")); // true   
