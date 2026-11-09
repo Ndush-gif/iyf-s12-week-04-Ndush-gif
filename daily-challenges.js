@@ -39,6 +39,22 @@ function reverseStringLoop(str) {
 
 // Don't use Math.max() - use a loop!
 // Then try with reduce()
+
+// Using a loop
+function findLargestNumber(arr) {
+    let largest = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    return largest;
+}   
+// Using reduce()
+function findLargestNumberReduce(arr) {
+    return arr.reduce((max, current) => (current > max ? current : max), arr[0]);
+}   
+
 // Day 4: Remove Duplicates 🟡
 // Write a function that removes duplicates from an array.
 
