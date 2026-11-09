@@ -61,9 +61,9 @@ console.log(a ** b);  // Exponentiation
 // output: 1000
 
 // Increment/Decrement
-let count = 0;
-count++;  // count is now 1
-count--;  // count is now 0
+let incrementDecrementCount = 0;
+incrementDecrementCount++;  // count is now 1
+incrementDecrementCount--;  // count is now 0
 
 // Exercise 2: String Operations
 
@@ -159,15 +159,148 @@ function isEven(number) {
 function getInitials(fullName) {
     const names = fullName.split(" ");
     let initials = "";
+    for (let i = 0; i < names.length; i++) {
+        initials += names[i].charAt(0).toUpperCase();
+    }
+    return initials;
+}
+
 // reverseString(str) - reverses a string
 function reverseString(str) {
     return str.split("").reverse().join("");
 }
 
-console.log(calculateArea)
-output: 50
+console.log(calculateArea(10, 5)); // output: 50
 console.log(celsiusToFahrenheit(25)); // output: 77
-output: true
 console.log(isEven(4)); // output: true
-output: true
 console.log(getInitials("Catherine Nduku")); // output: CN
+console.log(reverseString("Hello, World!")); // output: !dlroW ,olleH   
+
+// Exercise 3: Default Parameters
+
+function greet(name = "Guest", greeting = "Hello") {
+    return `${greeting}, ${name}!`;
+}
+
+console.log(greet());              // Hello, Guest!
+console.log(greet("Alice"));       // Hello, Alice!
+console.log(greet("Bob", "Hi"));   // Hi, Bob!
+
+// Build: A function calculateTip(bill, tipPercent = 15) that returns the tip amount.
+
+function calculateTip(bill, tipPercent = 15) {
+    return (bill * tipPercent) / 100;
+}
+console.log(calculateTip(100));        // output: 15
+console.log(calculateTip(100, 20));    // output: 20
+
+
+// Task 7.4: Control Flow 🟡
+// Exercise 1: If/Else Statements
+function getGrade(score) {
+    if (score >= 90) {
+        return "A";
+    } else if (score >= 80) {
+        return "B";
+    } else if (score >= 70) {
+        return "C";
+    } else if (score >= 60) {
+        return "D";
+    } else {
+        return "F";
+    }
+}
+
+console.log(getGrade(85));  // output: B
+console.log(getGrade(72));  // output: C
+console.log(getGrade(59));  // output: F
+
+
+// Exercise 2: Switch Statements
+function getDayName(dayNumber) {
+    switch (dayNumber) {
+        case 0:
+            return "Sunday";
+        case 1:
+            return "Monday";
+        // ... add remaining days
+        default:
+            return "Invalid day";
+    }
+}
+console.log(getDayName(1));  // output: Monday
+console.log(getDayName(5));  // output: Invalid day
+
+// Exercise 3: Loops
+
+// For loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// While loop
+let count = 0;
+while (count < 5) {
+    console.log(count);
+    count++;}
+
+// For...of (arrays)
+const colors = ["red", "green", "blue"];
+for (const color of colors) {
+    console.log(color);
+}
+
+// Build these programs:
+
+// Print numbers 1-100
+
+// Print only even numbers 1-50
+// FizzBuzz (print "Fizz" for multiples of 3, "Buzz" for 5, "FizzBuzz" for both)
+// Print a triangle of stars
+
+// Mini-Project: Calculator 🔴
+// Time: 60 minutes
+
+// Build an interactive calculator in the console.
+
+// Requirements:
+
+// Functions for add, subtract, multiply, divide
+// A main calculate(num1, operator, num2) function
+// Handle division by zero
+// Support these operators: +, -, *, /, % (modulus), ** (power)
+
+// Starter Code:
+ 
+function add(a, b) {
+    return a + b;
+}
+
+function subtract(a, b) {
+    // Your code
+}
+
+function multiply(a, b) {
+    // Your code
+}
+
+function divide(a, b) {
+    // Your code (handle zero!)
+}
+
+function calculate(num1, operator, num2) {
+    switch (operator) {
+        case "+":
+            return add(num1, num2);
+        // Add remaining cases
+        default:
+            return "Invalid operator";
+    }
+}
+
+// Test
+console.log(calculate(10, "+", 5));  // 15
+console.log(calculate(10, "-", 5));  // 5
+console.log(calculate(10, "*", 5));  // 50
+console.log(calculate(10, "/", 5));  // 2
+console.log(calculate(10, "/", 0));  // Error message]
