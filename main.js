@@ -351,3 +351,4 @@ console.log(firstGreaterThan10); // undefined
 // Calculate the product of all numbers
 const product = numbers.reduce((total, num) => total * num, 1);
 console.log(product); // 120
+
