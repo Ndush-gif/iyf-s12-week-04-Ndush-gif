@@ -475,3 +475,65 @@ console.log(hasTopStudent); // true
 // 8. Check if all students are passing (grade >= 60)
 const allPassing = students.every(student => student.grade >= 60);
 console.log(allPassing); // true
+
+
+// Task 8.4: JSON — Data as Text 🟡
+const json = '{"name":"Wanjiku","grades":{"math":88,"english":92}}';
+
+// Text → object
+const student = JSON.parse(json);
+console.log(student.grades.math);        // 88
+
+// Object → text (2 = indent, for readability)
+const backToText = JSON.stringify(student, null, 2);
+console.log(typeof backToText);          // "string"
+
+// Exercise: given this JSON string of posts, parse it, then:
+
+const postsJson = '[{"id":1,"title":"Welcome","likes":12,"published":true},{"id":2,"title":"Draft ideas","likes":0,"published":false},{"id":3,"title":"Week 4 recap","likes":30,"published":true}]';
+
+// Parse it into an array
+const posts = JSON.parse(postsJson);
+console.log(posts); // Array of post objects
+output: [
+  { id: 1, title: 'Welcome', likes: 12, published: true },
+  { id: 2, title: 'Draft ideas', likes: 0, published: false },
+  { id: 3, title: 'Week 4 recap', likes: 30, published: true }
+]
+// Keep only published posts
+const publishedPosts = posts.filter(post => post.published);
+console.log(publishedPosts); // [{id: 1, ...}, {id: 3, ...}]
+output: [
+  { id: 1, title: 'Welcome', likes: 12, published: true },
+  { id: 3, title: 'Week 4 recap', likes: 30, published: true }
+]   
+// Sort them by likes, highest first
+const sortedPosts = publishedPosts.sort((a, b) => b.likes - a.likes);
+console.log(sortedPosts); // [{id: 3, ...}, {id: 1, ...}]
+output: [
+  { id: 3, title: 'Week 4 recap', likes: 30, published: true },
+  { id: 1, title: 'Welcome', likes: 12, published: true }
+]
+// Map them to strings like "Week 4 recap (30 likes)"
+const postStrings = sortedPosts.map(post => `${post.title} (${post.likes} likes)`); 
+console.log(postStrings); // ["Week 4 recap (30 likes)", "Welcome (12 likes)"]  
+output: [ 'Week 4 recap (30 likes)', 'Welcome (12 likes)' ] 
+// JSON.stringify the filtered array back to text
+const filteredJson = JSON.stringify(sortedPosts, null, 2);
+console.log(filteredJson); // JSON string of the filtered posts
+output: `[
+  {
+    "id": 3,
+    "title": "Week 4 recap",
+    "likes": 30,
+    "published": true
+  },
+  {
+    "id": 1,
+    "title": "Welcome",
+    "likes": 12,
+    "published": true
+  }
+]`
+// Rules to remember: JSON keys and strings use double quotes; no trailing commas; no functions or undefined. JSON.parse on invalid text throws a SyntaxError — wrap it in try/catch when the text comes from outside your code.
+
