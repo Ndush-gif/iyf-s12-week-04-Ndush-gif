@@ -389,3 +389,89 @@ console.log(person);{;
      address: { city: 'Nairobi',;
     country: 'Kenya' };
      phone: '0712 345 678' };
+
+     // Exercise 2: Object Methods
+     const calculator = {
+    add: function(a, b) {
+        return a + b;
+    },
+    // Shorthand method syntax
+    subtract(a, b) {
+        return a - b;
+    },
+    // Arrow function
+    multiply: (a, b) => a * b
+};
+
+console.log(calculator.add(5, 3));
+output: 8
+console.log(calculator.subtract(10, 4));
+output: 6
+console.log(calculator.multiply(6, 7));
+// output: 42
+
+// Exercise 3: Object Iteration
+
+const scores = {
+    math: 95,
+    english: 88,
+    science: 92
+};
+
+// Get keys
+console.log(Object.keys(scores));   // ["math", "english", "science"]
+
+// Get values
+console.log(Object.values(scores)); // [95, 88, 92]
+
+// Get entries
+console.log(Object.entries(scores)); // [["math", 95], ["english", 88], ...]
+
+// Loop through
+for (const [subject, score] of Object.entries(scores)) {
+    console.log(`${subject}: ${score}`);
+}
+
+// Task 8.3: Array of Objects 🔴
+// Exercise: Working with Real Data
+
+const students = [
+    { name: "Alice", age: 22, grade: 85, major: "CS" },
+    { name: "Bob", age: 20, grade: 72, major: "Math" },
+    { name: "Charlie", age: 23, grade: 90, major: "CS" },
+    { name: "Diana", age: 21, grade: 88, major: "Physics" },
+    { name: "Eve", age: 22, grade: 95, major: "CS" }
+];
+
+// Your tasks - use array methods:
+
+// 1. Get all student names
+const names = students.map(student => student.name)
+console.log(names); // ["Alice", "Bob", "Charlie", "Diana", "Eve"]
+
+// 2. Get students with grade > 80
+const highAchievers = students.filter(student => student.grade > 80);
+console.log(highAchievers); // [{name: "Alice", ...}, {name: "Charlie", ...}, {name: "Diana", ...}, {name: "Eve", ...}]
+// 3. Find the student named "Charlie"
+const charlie = students.find(student => student.name === "Charlie");
+console.log(charlie); // {name: "Charlie", age: 23, grade: 90, major: "CS"}
+
+// 4. Calculate average grade
+const avgGrade = students.reduce((sum, student) => sum + student.grade, 0) / students.length;
+console.log(avgGrade); // 88.4
+
+// 5. Get CS majors only
+const csMajors = students.filter(student => student.major === "CS");
+console.log(csMajors); // [{name: "Alice", ...}, {name: "Charlie", ...}, {name: "Eve", ...}]
+
+// 6. Sort by grade (highest first)
+const sortedByGrade = [...students].sort((a, b) => b.grade - a.grade);
+console.log(sortedByGrade); // [{name: "Eve", ...}, {name: "Charlie", ...}, {name: "Diana", ...}, {name: "Alice", ...}, {name: "Bob", ...}] 
+
+// 7. Check if any student has grade > 90
+const hasTopStudent = students.some(student => student.grade > 90);
+console.log(hasTopStudent); // true
+
+// 8. Check if all students are passing (grade >= 60)
+const allPassing = students.every(student => student.grade >= 60);
+console.log(allPassing); // true
