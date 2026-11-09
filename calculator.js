@@ -1,4 +1,4 @@
-// Mini-Project: Calculator 🔴ggg
+// Mini-Project: Calculator 
 // Time: 60 minutes
 
 // Build an interactive calculator in the console.
@@ -10,6 +10,7 @@
 // Handle division by zero
 // Support these operators: +, -, *, /, % (modulus), ** (power)
 
+{
 // Starter Code:
  
 function add(a, b) {
@@ -45,6 +46,7 @@ function calculate(num1, operator, num2) {
         default:
             return "Invalid operator";
     }
+}
 }
 
 // Test
