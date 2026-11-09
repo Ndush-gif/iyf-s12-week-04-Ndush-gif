@@ -140,3 +140,34 @@ const divide = (a, b) => {
     }
     return a / b;
 };
+
+// Exercise 2: Build These Functions
+
+// calculateArea(width, height) - returns area of rectangle
+function calculateArea(width, height) {
+    return width * height;
+}   
+// celsiusToFahrenheit(celsius) - converts temperature
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+}
+// isEven(number) - returns true if even, false if odd
+function isEven(number) {
+    return number % 2 === 0;
+}
+// getInitials(fullName) - returns initials (e.g., "Catherine Nduku" → "CN")
+function getInitials(fullName) {
+    const names = fullName.split(" ");
+    let initials = "";
+// reverseString(str) - reverses a string
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+console.log(calculateArea)
+output: 50
+console.log(celsiusToFahrenheit(25)); // output: 77
+output: true
+console.log(isEven(4)); // output: true
+output: true
+console.log(getInitials("Catherine Nduku")); // output: CN
