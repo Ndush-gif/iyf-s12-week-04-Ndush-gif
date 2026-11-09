@@ -352,3 +352,40 @@ console.log(firstGreaterThan10); // undefined
 const product = numbers.reduce((total, num) => total * num, 1);
 console.log(product); // 120
 
+// Task 8.2: Objects 🟢
+// Exercise 1: Object Basics
+// Creating objects
+const person = {
+    firstName: "Brian",
+    lastName: "Kamau",
+    age: 30,
+    isStudent: false,
+    hobbies: ["reading", "coding", "football"],
+    address: {
+        city: "Nairobi",
+        country: "Kenya"
+    }
+};
+
+// Accessing properties
+console.log(person.firstName);         // Dot notation
+// output: Brian
+console.log(person["lastName"]);       // Bracket notation
+// output: Kamau
+console.log(person.address.city);      // Nested
+// output: Nairobi
+
+// Modifying properties
+person.age = 31;
+person.phone = "0712 345 678";         // Add new property
+delete person.isStudent;               // Remove property
+
+console.log(person);{;
+    output: {
+     firstName: 'Brian',
+     lastName: 'Kamau',
+     age: 31,   
+     hobbies: [ 'reading', 'coding', 'football' ];
+     address: { city: 'Nairobi',;
+    country: 'Kenya' };
+     phone: '0712 345 678' };
