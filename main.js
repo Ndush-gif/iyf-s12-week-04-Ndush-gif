@@ -291,3 +291,63 @@ for (let i = 1; i <= 5; i++) {
     console.log("*".repeat(i));
 }
 
+
+// Lesson 8 Tasks
+// Task 8.1: Arrays 🟢
+// Exercise 1: Array Basics
+
+// Creating arrays
+const fruits = ["apple", "banana", "orange"];
+const numbers = [1, 2, 3, 4, 5];
+const mixed = ["hello", 42, true, null];
+
+// Accessing elements
+console.log(fruits[0]);     // apple
+console.log(fruits.length); // 3
+
+// Modifying arrays
+fruits.push("grape");        // Add to end
+console.log(fruits);        // ["apple", "banana", "orange", "grape"]
+fruits.unshift("mango");     // Add to start
+console.log(fruits);        // ["mango", "apple", "banana", "orange", "grape"]
+fruits.pop();                // Remove from end
+console.log(fruits);        // ["mango", "apple", "banana", "orange"]
+fruits.shift();              // Remove from start
+console.log(fruits);        // ["apple", "banana", "orange"]
+
+// Exercise 2: Array Methods
+
+const numbers = [1, 2, 3, 4, 5];
+
+// forEach - do something with each element
+numbers.forEach(num => console.log(num * 2));
+
+// map - transform each element
+const doubled = numbers.map(num => num * 2);
+
+// filter - keep elements that pass a test
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+
+// find - get first element that passes test
+const firstEven = numbers.find(num => num % 2 === 0);
+
+// reduce - combine all elements
+const sum = numbers.reduce((total, num) => total + num, 0);
+
+// includes - check if element exists
+console.log(numbers.includes(3)); // true
+
+// Build: Use array methods to:
+
+// Double all numbers in an array
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+// Filter out negative numbers
+const positiveNumbers = numbers.filter(num => num > 0);
+console.log(positiveNumbers); // [1, 2, 3, 4, 5]
+// Find the first number greater than 10
+const firstGreaterThan10 = numbers.find(num => num > 10);
+console.log(firstGreaterThan10); // undefined
+// Calculate the product of all numbers
+const product = numbers.reduce((total, num) => total * num, 1);
+console.log(product); // 120
