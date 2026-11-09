@@ -34,6 +34,9 @@ function reverseStringLoop(str) {
     }
     return reversed;
 }
+console.log(reverseString("hello")); // "olleh"
+console.log(reverseStringLoop("hello")); // "olleh"
+
 // Day 3: Find Largest Number 🟢
 // Write a function that finds the largest number in an array.
 
@@ -54,12 +57,25 @@ function findLargestNumber(arr) {
 function findLargestNumberReduce(arr) {
     return arr.reduce((max, current) => (current > max ? current : max), arr[0]);
 }   
+console.log(findLargestNumber([1, 3, 2, 5, 4])); // 5
+console.log(findLargestNumberReduce([1, 3, 2, 5, 4])); // 5
 
 // Day 4: Remove Duplicates 🟡
 // Write a function that removes duplicates from an array.
 
 // Input: [1, 2, 2, 3, 4, 4, 5] → Output: [1, 2, 3, 4, 5]
 // Try with Set, try with filter
+// Using Set
+function removeDuplicates(arr) {
+    return [...new Set(arr)];
+}
+// Using filter
+function removeDuplicatesFilter(arr) {
+    return arr.filter((item, index) => arr.indexOf(item) === index);
+}
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // [1, 2, 3, 4, 5]
+console.log(removeDuplicatesFilter([1, 2, 2, 3, 4, 4, 5])); // [1, 2, 3, 4, 5]
+
 // Day 5: Palindrome Checker 🟡
 // Write a function that checks if a string is a palindrome.
 
